@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" as="image"
+        href="https://kolabstorageasia.blob.core.windows.net/store-img/_store/upload/fufuland/home-1732683483054-Logo%20(no%20bg).png">
+    <link rel="preload" as="image"
+        href="https://kolabstorageasia.blob.core.windows.net/store-img/_store/upload/fufuland/home-1732631488305-IMG_7467%202.PNG">
+    <link rel="preload" as="image"
+        href="https://kolabstorageasia.blob.core.windows.net/store-img/_store/upload/fufuland/home-1732632799359-IMG_7471.PNG">
+    <!-- ! tailwindcss v3.4.9 | MIT License | https://tailwindcss.com -->
+    <link rel="stylesheet" href="css/01df8980d43796e3.css" data-precedence="next">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--xt-wallet-->
+    <script src='https://cdn.jsdelivr.net/npm/@signumjs/core@1.0.0-rc.26/dist/signumjs.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@signumjs/util@1.0.0-rc.26/dist/signumjs.util.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@signumjs/wallets@1.0.0-rc.26/dist/signumjs.wallets.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@signumjs/contracts@1.0.0-rc.26/dist/signumjs.contracts.min.js'></script>
+
+    <title>fufuland - 線上商店 powered by KOLab</title>
+    <meta name="description" content="fufuland - 線上商店 powered by KOLab">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="16x16">
+    <meta name="next-size-adjust">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=workspace_premium" />
+    <style>
+        /*for the section*/
+        .Page-OmpSotIOMQ {
+            gap: 0px;
+            width: 100%;
+            margin: 0px;
+            display: flex;
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: flex-start;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            border-radius: 0px;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            min-height: fit-content;
+            height: 100%;
+            background-image: linear-gradient(rgb(255, 249, 232), rgb(255, 249, 232)), url();
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /*for the  order form*/
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 24px;
+            color: #333;
+        }
+
+        .form-group {
+            /* margin-bottom: 16px; */
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px 12px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        /* Validation states */
+        input.valid,
+        select.valid {
+            border-bottom-color: #4caf50;
+        }
+
+        input.invalid,
+        select.invalid {
+            border-bottom-color: #f44336;
+        }
+
+        .error-message {
+            color: #f44336;
+            font-size: 12px;
+            margin-top: 4px;
+            min-height: 16px;
+            display: block;
+        }
+
+        .phone-input {
+            display: flex;
+            gap: 12px;
+        }
+
+        .phone-prefix {
+            width: 120px;
+        }
+
+        .order-summary {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            color: #666;
+        }
+
+        .total-row {
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #7895b7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: background-color 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background-color: #6785a7;
+        }
+
+        .checkout-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .required::after {
+            content: '*';
+            color: #ff4d4f;
+            margin-left: 4px;
+        }
+
+        /* for extra footer information  */
+        .container-footer {
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 1rem;
+            text-align: center;
+            background-image: linear-gradient(rgb(255, 249, 232), rgb(255, 249, 232)), url();
+        }
+
+        .divider {
+            border-top: 1px solid #e5e7eb;
+            padding-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #4b5563;
+        }
+
+        /* for search funtion  */
+        .container-search {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-image: linear-gradient(rgb(255, 249, 232), rgb(255, 249, 232)), url();
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-btn {
+            width: 100%;
+            background: #f1cb75;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        /* .image-container {
+            position: relative;
+        } */
+
+
+        .toggle-btn {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #f1cb75;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%
+        }
+
+        .toggle-btn:hover {
+            background-color: #a98e50;
+        }
+    </style>
+
+
+    <style>
+        .root {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            height: fit-content;
+        }
+
+        .root-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 500px;
+            height: fit-content;
+            overflow: hidden;
+        }
+
+        .WebPage-ROOT {
+            background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)), url();
+            background-size: cover;
+            background-position: center;
+            /* Removed invalid property background-img-mask */
+            height: 100%;
+            padding: 0;
+            background-color: #ffffff;
+            width: 100%;
+        }
+    </style>
+    <style>
+        .Pagnation-5ukyccm-T4 {
+            width: 100%;
+            height: fit-content;
+            current-page: 0;
+            position: relative;
+            min-height: fit-content;
+        }
+
+        .Page-u7ZlrU8_9e {
+            gap: 0px;
+            width: 100%;
+            margin: 0px;
+            display: flex;
+            padding: 0px;
+            margin-top: 0px;
+            align-items: flex-start;
+            margin-left: 0px;
+            padding-top: 0px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 0px;
+            flex-direction: column;
+            padding-bottom: 0px;
+            justify-content: center;
+            position: relative;
+            min-height: fit-content;
+            height: 100%;
+            background-image: linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        /*navbar section*/
+        .D8-JIf1V5m {
+            position: fixed;
+            top: 0;
+            height: fit-content;
+            width: 100%;
+            max-width: 500px;
+            z-index: 100;
+        }
+
+        .Container-ky52cFH6m7 {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: center;
+            margin-left: 0px;
+            padding-top: 20px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 20px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 20px;
+            flex-direction: row;
+            padding-bottom: 20px;
+            justify-content: space-between;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        /*logo section*/
+        .logo-xpU7UGXY04 {
+            width: 120px;
+            height: 30px;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 0px;
+            margin-left: 0px;
+            padding-top: 0px;
+            aspect-ratio: 4.481751824817518;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+        }
+
+        /*navbar button section*/
+        .Button-navbar {
+            color: #000000;
+            min-width: 142px;
+            width: auto;
+            height: 42px;
+            margin: 0;
+            padding: 5px;
+            font-size: 16;
+            font-style: normal;
+            margin-top: 0;
+            font-weight: normal;
+            margin-left: 0;
+            padding-top: 5px;
+            border-color: #000000;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0;
+            padding-left: 5px;
+            border-radius: 5px;
+            margin-bottom: 0;
+            padding-right: 5px;
+            padding-bottom: 5px;
+            text-decoration: none;
+            background-color: #55828b;
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        .Container-P1_hvQIFrP {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            display: flex;
+            padding: 0;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: flex-start;
+            margin-left: 0px;
+            padding-top: 5px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 10px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 10px;
+            flex-direction: row;
+            padding-bottom: 5px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Text--i_o19aYCj {
+            color: #ffffff;
+            width: auto;
+            height: 25px;
+            margin: 0;
+            font-size: 16;
+            margin-top: 0;
+            text-align: center;
+            font-family: Arial;
+            font-weight: normal;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+    </style>
+
+
+    <style>
+        /*cover section*/
+        .cover-section {
+            position: relative;
+            height: fit-content;
+            width: 100%;
+            visibility: hidden;
+        }
+
+        .Container-YeyccoTVCP-hidden {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: center;
+            margin-left: 0px;
+            padding-top: 20px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 20px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 20px;
+            flex-direction: row;
+            padding-bottom: 20px;
+            justify-content: space-between;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgb(255, 249, 232), rgb(255, 249, 232)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Image-MdmBCjHatO {
+            width: 100auto;
+            height: 40px;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 0px;
+            margin-left: 0px;
+            padding-top: 0px;
+            aspect-ratio: 2.627586206896552;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+        }
+
+        .cover-section02 {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 150px;
+            margin: 0px;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: flex-start;
+            margin-left: 0px;
+            padding-top: 20px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 20px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 20px;
+            flex-direction: column;
+            padding-bottom: 20px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgba(50, 51, 54, 0.4), rgba(50, 51, 54, 0.4)), url(images/home-1732630022728-IMG_7460.PNG);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Text-uMsxkfrobv {
+            color: #ffffff;
+            margin: 0;
+            font-size: 25px;
+            margin-top: 0;
+            text-align: left;
+            font-family: 'Noto Sans TC';
+            font-weight: bold;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+
+        .Br-uMsxkfrobv {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgba(59, 130, 246, .5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+        }
+    </style>
+
+    <style>
+        /*speciall-offer-section*/
+        .special-offer-section-0DGdGjdJJU {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 5px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: center;
+            margin-left: 0px;
+            padding-top: 15px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 5px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 5px;
+            flex-direction: column;
+            padding-bottom: 5px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgb(255, 249, 232), rgb(255, 249, 232)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Text-N3OF6zdDDw {
+            color: #e9a05e;
+            margin: 0;
+            font-size: 20px;
+            margin-top: 0;
+            text-align: left;
+            font-family: 'Noto Sans TC';
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+
+        .count-down-timer-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .timer-number {
+            background-color: rgb(241, 203, 117);
+            color: rgb(0, 0, 0);
+            border-width: 1px;
+            border-color: rgb(241, 203, 117);
+            border-style: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+            padding: 13px;
+            margin: 10px;
+        }
+
+        .timer-unit {
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .Container-M2drNN9crj {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 474px;
+            margin: 0px;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: flex-start;
+            margin-left: 0px;
+            padding-top: 0px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 20px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 20px;
+            flex-direction: column;
+            padding-bottom: 0px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgb(255, 249, 232), rgb(255, 249, 232)), url();
+            background-size: cover;
+            background-position: center
+        }
+
+        .iG4Iz-3tgL {
+            position: relative;
+            width: 100%;
+            height: fit-content;
+        }
+
+        .Container-iG4Iz-3tgL {
+            white-space: pre-line;
+            width: 100%;
+            height: 100%;
+            min-height: fit-content;
+        }
+
+        .Container-fKPPwi-3LU {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 0px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: flex-start;
+            margin-left: 0px;
+            padding-top: 0px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 0px;
+            flex-direction: column;
+            padding-bottom: 0px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Container-0aOTK66Bwf {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 0px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: center;
+            margin-left: 0px;
+            padding-top: 0px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 10px;
+            padding-right: 0px;
+            flex-direction: row;
+            padding-bottom: 0px;
+            justify-content: space-between;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Container-BnkZsXBwiL {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 60%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 0px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: center;
+            margin-left: 0px;
+            padding-top: 0px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 0px;
+            flex-direction: row;
+            padding-bottom: 0px;
+            justify-content: start;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Image-2h6Rp2N6dK {
+            width: 100%;
+            height: 245px;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 0px;
+            margin-left: 0px;
+            padding-top: 0px;
+            aspect-ratio: 1.6160220994475138;
+            border-color: black;
+            border-style: none;
+            border-width: 100%;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+
+        }
+
+        .Container-vjVGeFGLP5 {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 6px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: start;
+            margin-left: 0px;
+            padding-top: 6px;
+            border-color: #f1cb75;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 6px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            padding-right: 6px;
+            flex-direction: column;
+            padding-bottom: 6px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgb(252, 232, 178), rgb(252, 232, 178)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Text-Y7fpaobUoy {
+            color: #3d3d3d;
+            width: 305px;
+            height: auto;
+            margin: 0;
+            font-size: 14px;
+            margin-top: 0;
+            text-align: left;
+            font-family: Arial;
+            margin-left: 10px;
+            margin-right: 0;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+
+        .Container-2h6Rp2N6dK {
+            display: flex;
+            align-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        /*footer*/
+        .Footer-5QMrkBl5dE {
+            gap: 0px;
+            width: 100%;
+            /* height: 520px; */
+            margin: 0px;
+            display: flex;
+            padding: 20px;
+            margin-top: auto;
+            align-items: start;
+            margin-left: 0px;
+            padding-top: 0px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 20px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 20px;
+            flex-direction: column;
+            padding-bottom: 20px;
+            justify-content: start;
+            position: relative;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgb(255, 249, 232), rgb(255, 249, 232)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Container-csfXwJ_ewQ {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 20px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: center;
+            margin-left: 0px;
+            padding-top: 20px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 20px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 20px;
+            flex-direction: column;
+            padding-bottom: 20px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Text-KA8CVb1FAG {
+            color: #3d3d3d;
+            width: 123px;
+            height: 27px;
+            margin: 0;
+            font-size: 18px;
+            margin-top: 0;
+            text-align: center;
+            font-family: Arial;
+            font-weight: bold;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+
+        .Container-mtvRnpC47m {
+            gap: 0px;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: fit-content;
+            margin: 0px;
+            display: flex;
+            padding: 0px;
+            position: relative;
+            margin-top: 0px;
+            transform: none;
+            align-items: center;
+            margin-left: 0px;
+            padding-top: 0px;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 10px;
+            padding-right: 0px;
+            flex-direction: row;
+            padding-bottom: 0px;
+            justify-content: center;
+            min-height: fit-content;
+            max-height: 100%;
+            background-image: linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Image-YqYibvc-dA {
+            width: 279px;
+            height: 197px;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 0px;
+            margin-left: 0px;
+            padding-top: 0px;
+            aspect-ratio: 1.7777777777777777;
+            border-color: black;
+            border-style: none;
+            border-width: 1px;
+            margin-right: 0px;
+            padding-left: 0px;
+            border-radius: 0px;
+            margin-bottom: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+        }
+
+        .Text-MHzhO0RGnw {
+            color: #3d3d3d;
+            width: 293px;
+            height: 246px;
+            margin: 0;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: left;
+            font-family: Arial;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+        }
+
+        .address-name {
+            color: rgb(0, 0, 0);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+    </style>
+    <style>
+        .dropdown-menu .dropdown-menu {
+            left: 100%;
+        }
+
+        .dropdown-item+.dropdown-menu {
+            display: none;
+        }
+
+        .dropdown-item:hover+.dropdown-menu,
+        .dropdown-menu:hover {
+            display: block;
+        }
+
+        button {
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        /*# sourceMappingURL=style.css.map */
+
+
+        .avatar {
+            font-size: 16px;
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            background: #555555;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar::after {
+            content: attr(data-label);
+            font-family: "Readex Pro", sans-serif;
+            color: #ffffff;
+        }
+
+
+        /*new navbar */
+        :root {
+            --primary: #eeeeee;
+            --secondary: #b18161;
+            --green: #b18161;
+            --secondary-light: rgb(34, 124, 112, 0.2);
+            --secondary-light-2: rgb(127, 183, 126, 0.1);
+            --white: #fff;
+            --black: #393e46;
+
+            --shadow: 0px 2px 8px 0px var(--secondary-light);
+        }
+
+        .navbar0209 {
+            display: flex;
+            align-items: center;
+            height: 70px;
+            background-color: var(--white);
+            padding: 0 8%;
+            box-shadow: var(--shadow);
+        }
+
+        .navbar-logo0209 {
+            cursor: pointer;
+        }
+
+        .navbar-list0209 {
+            width: 100%;
+            text-align: right;
+            padding-right: 2rem;
+        }
+
+        .navbar-list0209 li {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+
+        .navbar-list0209 li a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--black);
+            text-decoration: none;
+        }
+
+        .profile-dropdown0209 {
+            position: relative;
+            width: fit-content;
+            padding-left: 10px;
+            /* display: none; */
+        }
+
+        .profile-dropdown-btn0209 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-right: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            /* width: 150px; */
+            border-radius: 50px;
+            color: var(--black);
+            /* background-color: white;
+  box-shadow: var(--shadow); */
+
+            cursor: pointer;
+            border: 1px solid var(--secondary);
+            transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+                border 0.3s;
+        }
+
+
+
+        .profile-dropdown-btn0209:hover {
+            background-color: var(--secondary-light-2);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-img0209 {
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: url(./assets/profile-pic.jpg);
+            background-size: cover;
+
+        }
+
+        .profile-img0209 i {
+            position: absolute;
+            right: 0;
+            bottom: 0.3rem;
+            font-size: 0.5rem;
+            color: var(--green);
+        }
+
+        .profile-dropdown-btn0209 span {
+            margin: 0 0.5rem;
+            margin-right: 0;
+
+        }
+
+        .profile-dropdown-list0209 {
+            position: absolute;
+            top: 68px;
+            width: 220px;
+            right: 0;
+            background-color: var(--white);
+            border-radius: 10px;
+            max-height: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: max-height 0.5s;
+            padding-left: 0;
+            z-index: 10000;
+        }
+
+        .profile-dropdown-list0209 hr {
+            border: 0.5px solid var(--green);
+        }
+
+        .profile-dropdown-list0209.active {
+            max-height: 500px;
+        }
+
+        .profile-dropdown-list-item0209 {
+            padding: 0.5rem 0rem 0.5rem 1rem;
+            transition: background-color 0.2s ease-in, padding-left 0.2s;
+        }
+
+        .profile-dropdown-list-item0209 a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .profile-dropdown-list-item0209 a i {
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+            width: 2.3rem;
+            height: 2.3rem;
+            background-color: var(--secondary);
+            color: var(--white);
+            line-height: 2.3rem;
+            text-align: center;
+            margin-right: 1rem;
+            border-radius: 50%;
+            transition: margin-right 0.3s;
+        }
+
+        .profile-dropdown-list-item0209:hover {
+            padding-left: 1.5rem;
+            background-color: var(--secondary-light);
+        }
+
+
+        @media (max-width: 1200px) {
+            .profile-dropdown-list0209 {
+                position: absolute;
+                /* top: -280px;
+    width: 220px;
+    right: -30px; */
+                background-color: var(--white);
+                border-radius: 10px;
+                max-height: 0;
+                overflow: hidden;
+                box-shadow: var(--shadow);
+                transition: max-height 0.5s;
+                padding-left: 0;
+                z-index: 100;
+            }
+
+        }
+    </style>
+    
+    <style>
+        /* for new info*/
+        .details {
+            padding: 8px 0;
+        }
+
+        .detail-item {
+            display: flex;
+            /* padding: 12px 16px; */
+            padding: 8px 8px;
+            align-items: flex-start;
+        }
+
+        .detail-item .material-icons {
+            color: #5f6368;
+            margin-right: 16px;
+            margin-top: 2px;
+        }
+
+        .detail-content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .detail-content p {
+            font-size: 14px;
+        }
+
+        .detail-content-address {
+            flex: 1;
+
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .detail-content-address p {
+            font-size: 14px;
+        }
+
+        .open-status {
+            color: #188038;
+        }
+        .open-status.open {
+            color: #188038;
+        }
+        .open-status.close {
+            color: #d93025;
+        }
+
+        .opacity-0 {
+            opacity: 0;
+        }
+        
+    </style>
+</head>
+
+<body><!--$-->
+    <div class="root">
+        <div class="root-container">
+            <div class="WebPage-ROOT" id="ROOT">
+                <div class="Pagnation-5ukyccm-T4" id="5ukyccm-T4">
+                    <div id="Page-u7ZlrU8_9e" class="Page-u7ZlrU8_9e">
+                        <div class="D8-JIf1V5m" id="D8-JIf1V5m">
+                            <div id="ky52cFH6m7" class="Container-ky52cFH6m7">
+                                <div class="div-wpGq93PEW-" id="wpGq93PEW-">
+                                    <div>
+
+                                        <img id="xpU7UGXY04"
+                                            src="https://kolabstorageasia.blob.core.windows.net/store-img/_store/upload/kuromonaquatic/home-1731988876825-logo.png"
+                                            alt="image" class="logo-xpU7UGXY04">
+                                    </div>
+                                </div>
+                                <button id="xt-wallet" class="Button-navbar LzAysOOrVk">
+                                    <div id="P1_hvQIFrP" class="Container-P1_hvQIFrP">
+                                        <div id="-i_o19aYCj" class="arial Text--i_o19aYCj">立刻預約</div>
+                                    </div>
+
+                                </button>
+                                <div style="display: none;" id="profile-dropdown">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cover-section" id="h9ZBVxSQWf-hidden">
+                            <div id="YeyccoTVCP-hidden" class="Container-YeyccoTVCP-hidden">
+                                <div class="div-pvaJz1GlFM" id="pvaJz1GlFM">
+                                    <div><img id="MdmBCjHatO" src="images/home-1732683483054-Logo%20%28no%20bg%29.png"
+                                            alt="image" class="Image-MdmBCjHatO"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cover-section02" id="4wwpXWxUd2">
+                            <div id="uMsxkfrobv" class="__className_cfd7f1 Text-uMsxkfrobv">立刻換領 fufuland
+                                <br class="Br-uMsxkfrobv">買三送一優惠卷
+                            </div>
+                        </div>
+                        <!-- <discount or special offer info> -->
+                        <div id="0DGdGjdJJU" class="special-offer-section-0DGdGjdJJU">
+                            <div id="N3OF6zdDDw" class="__className_cfd7f1 Text-N3OF6zdDDw"><b>限時優惠</b></div>
+                            <!--$!--><template data-dgst="BAILOUT_TO_CLIENT_SIDE_RENDERING"></template><!--/$-->
+                            <!-- count down timer -->
+                            <div class="count-down-timer-container" id="pBfJzKR9z_">
+                                <div class="timer-number days" id="days">
+                                    00</div>
+                                <div class="timer-unit" id="days-unit">
+                                    天
+                                </div>
+                                <div class="timer-number hours" id="hours">
+                                    00
+                                </div>
+                                <div class="timer-unit hours-unit" id="hours-unit">
+                                    時
+                                </div>
+                                <div class="timer-number minutes" id="minutes">
+                                    00
+                                </div>
+                                <div class="timer-unit minutes-unit" id="minutes-unit">
+                                    分
+                                </div>
+                                <div class="timer-number seconds" id="seconds">
+                                    00
+                                </div>
+                                <div class="timer-unit seconds-unit" id="seconds-unit">
+                                    秒
+                                </div>
+                            </div>
+                            <!-- terms and the order buttons -->
+                            <div id="M2drNN9crj" class="Container-M2drNN9crj">
+                                <div id="iG4Iz-3tgL" class="iG4Iz-3tgL">
+                                    <div class="Container-iG4Iz-3tgL">
+                                        <div id="fKPPwi-3LU" class="Container-fKPPwi-3LU">
+                                            <div id="0aOTK66Bwf" class="Container-0aOTK66Bwf">
+                                                <div id="BnkZsXBwiL" class="Container-BnkZsXBwiL"></div>
+                                            </div>
+                                            <div class="Container-2h6Rp2N6dK"><img id="2h6Rp2N6dK"
+                                                    src="images/home-1732631488305-IMG_7467%202.PNG" alt="image"
+                                                    class="Image-2h6Rp2N6dK"></div>
+                                            <div id="vjVGeFGLP5" class="Container-vjVGeFGLP5">
+                                                <div id="Y7fpaobUoy" class="arial Text-Y7fpaobUoy">1. 活動期限12月2號 -13號
+                                                    （只限星期一至五）
+                                                    2.價低產品享優惠
+                                                    3. fufuland全線分店適用
+                                                    4. 換購時請追蹤fufuland Instagram
+                                                    5.⁠ 如有任何爭議，fufuland保留最終決定權
+                                                </div>
+                                            </div>
+                                            <!-- 換領 button -->
+                                            <!-- <button id="cmxv7Zgc63"
+                                                style="id:AddToCartButton;color:#000000;width:100%;height:fit-content;margin:0px;padding:0px;font-size:16;font-style:normal;margin-top:0px;font-weight:normal;margin-left:0px;padding-top:0px;border-color:#000000;border-style:none;border-width:1px;margin-right:0px;padding-left:0px;border-radius:30px;margin-bottom:0px;padding-right:0px;padding-bottom:0px;text-decoration:none;background-color:#f1cb75;display:flex;flex-direction:row;cursor:pointer;opacity:1"
+                                                class="Button-3600.6330313619305">
+                                                <div id="WLVLGEhZtw"
+                                                    style="gap:0px;top:0px;left:0px;width:100%;height:100%;margin:0px;display:flex;padding:0;position:relative;margin-top:5px;transform:none;align-items:flex-start;margin-left:0px;padding-top:5px;border-color:black;border-style:none;border-width:1px;margin-right:0px;padding-left:10px;border-radius:0px;margin-bottom:5px;padding-right:10px;flex-direction:row;padding-bottom:5px;justify-content:center;min-height:fit-content;max-height:100%;background-image:linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();background-size:cover;background-position:center"
+                                                    class="Container-WLVLGEhZtw">
+                                                    <div id="sEcN0_Rjg8"
+                                                        style="color:#000000;margin:0;font-size:16;margin-top:0;text-align:left;font-family:'Noto Sans TC';margin-left:0;margin-right:0;margin-bottom:0;on-click-functions-metadata:;display:flex;flex-direction:column;opacity:1"
+                                                        class="__className_cfd7f1 Text-sEcN0_Rjg8"><span
+                                                            style="font-size:18px;font-weight:700">點擊換領！</span></div>
+                                                </div>
+                                            </button> -->
+                                            <button id="toggleForm" class="toggle-btn">點擊換領！</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div xAT8OJOcow is deleted > -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- form section  -->
+                <div id="OmpSotIOMQ" class="Page-OmpSotIOMQ">
+                    <div id="formContainer" class="form-container hidden">
+                        <h1>送貨地址</h1>
+                        <form id="orderForm" novalidate>
+                            <div class="form-group">
+                                <label class="required">姓名</label>
+                                <input type="text" id="name" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required">地址(第一行)</label>
+                                <input type="text" id="address1" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>地址(第二行)</label>
+                                <input type="text" id="address2">
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required">城市</label>
+                                <input type="text" id="city" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>省分/州</label>
+                                <input type="text" id="state">
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required">郵遞區號</label>
+                                <input type="text" id="zipcode" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required">國家/地區</label>
+                                <select id="country" required>
+                                    <option value="">請選擇國家/地區</option>
+                                    <option value="HK">香港</option>
+                                    <option value="TW">台灣</option>
+                                    <option value="CN">中國</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>聯絡方式</label>
+                                <div class="phone-input">
+                                    <select id="phonePrefix" class="phone-prefix">
+                                        <option value="+852">香港(+852)</option>
+                                        <option value="+886">台灣(+886)</option>
+                                        <option value="+86">中國(+86)</option>
+                                    </select>
+                                    <input type="tel" id="phone" placeholder="電話號碼">
+
+                                </div>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="required">電郵地址</label>
+                                <input type="email" id="email" required>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="order-summary">
+                                <h1>訂單詳情</h1>
+                                <div class="summary-row">
+                                    <span>小記</span>
+                                    <span>0</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>運費</span>
+                                    <span>免費</span>
+                                </div>
+                                <div class="summary-row total-row">
+                                    <span>總額</span>
+                                    <span>0</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="checkout-btn" disabled>立即結帳</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="container-search">
+
+
+                    <form>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">分店*</option>
+                                <option value="1">銅鑼灣店</option>
+                                <option value="2">尖沙咀店</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="2">2人</option>
+                                <option value="3">3人</option>
+                                <option value="4">4人</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="date" class="form-control" required placeholder="日期*">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="time" class="form-control" required placeholder="時間*">
+                        </div>
+
+                        <button type="submit" class="search-btn">搜尋</button>
+                    </form>
+                </div>
+                <!-- <footer section> -->
+                <div id="5QMrkBl5dE" class="Footer-5QMrkBl5dE">
+                    <div id="csfXwJ_ewQ" class="Container-csfXwJ_ewQ">
+                        <div id="KA8CVb1FAG" class="arial Text-KA8CVb1FAG">Fufuland</div>
+                        <div id="mtvRnpC47m" class="Container-mtvRnpC47m"></div>
+                        <div><img id="YqYibvc-dA" src="images/home-1732632799359-IMG_7471.PNG" alt="image"
+                                class="Image-YqYibvc-dA"></div>
+                        <!-- <div id="MHzhO0RGnw" class="arial Text-MHzhO0RGnw">
+                            <div><span class="address-name" class="address-name">📍旺角朗豪坊
+                                    B2樓</span>
+                                <br class="address-name">
+                                <span class="address-name">📍元朗Yoho
+                                    Mix 1樓</span>
+                                <br class="address-name">
+                                <span class="address-name">📍屯門屯門市廣場1期1樓</span>
+                                <br class="address-name">
+                                <span class="address-name">📍九龍灣Megabox 10樓</span>
+                                <br class="address-name">
+                                <span class="address-name">📍九龍塘又一城 1樓 Kiosk 1(近溜冰場）</span>
+                                <br class="address-name"> -->
+                        <!-- <font color="#000000"
+                                    face="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"> -->
+                        <!-- <span class="address-name">📍銅鑼灣利舞臺1樓中庭</span>
+                                <br class="address-name">
+                                <span class="address-name">📍觀塘APM 4樓</span>
+                                <br class="address-name">
+                                <span class="address-name">📍寶林新都城（即將開幕)</span>
+                                <br class="address-name">
+                                <span class="address-name">📍將軍澳Popcorn (即將開幕)</span>
+                                <br class="address-name">
+                                <span class="address-name">📍沙田新城市廣場(即將開幕）</span>
+                                <br class="address-name">
+                                <span class="address-name">📍大圍圍方（即將開幕）</span>
+                                <br class="address-name">
+
+
+
+                            </div>
+                        </div> -->
+
+                        <div class="details">
+                            <div class="detail-item">
+                                <span class="material-icons">place</span>
+                                <div class="detail-content-address">
+                                    <p>灣仔軒尼詩道226號</p>
+                                    <p class="secondary">所在地點：資華商業中心</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="material-icons opacity-0">place</span>
+                                <div class="detail-content-address">
+                                    <p>灣仔軒尼詩道226號</p>
+                                    <p class="secondary">所在地點：資華商業中心</p>
+                                </div>
+                            </div>
+                            <div class="detail-item open-hours-info">
+                                <span class="material-icons">schedule</span>
+                                <div class="detail-content">
+                                    <p class="open-status">營業中</p>
+                                    <p class="open-status-quote">&nbsp;結束營業時間：18:00</p>
+                                    <span class="material-icons dropdown">expand_more</span>
+                                </div>
+                            </div>
+
+                            <div class="full-hours-list hidden">
+                                <div class="detail-item">
+                                    <span class="material-icons opacity-0">schedule</span>
+                                    <div class="detail-content">
+                                        <p>星期一 09:00–18:00</p>
+
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="material-icons opacity-0">schedule</span>
+                                    <div class="detail-content">
+                                        <p>星期二 09:00–18:00</p>
+
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="material-icons opacity-0">schedule</span>
+                                    <div class="detail-content">
+                                        <p>星期三 09:00–18:00</p>
+
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="material-icons opacity-0">schedule</span>
+                                    <div class="detail-content">
+                                        <p>星期四 09:00–18:00</p>
+
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="material-icons opacity-0">schedule</span>
+                                    <div class="detail-content">
+                                        <p>星期五 09:00–18:00</p>
+
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="material-icons opacity-0">schedule</span>
+                                    <div class="detail-content">
+                                        <p>星期六 09:00–18:00</p>
+
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="material-icons opacity-0">schedule</span>
+                                    <div class="detail-content">
+                                        <p>星期日 09:00–18:00</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="detail-item" href="https://krg.com.hk">
+                                <span class="material-icons">language</span>
+                                <div class="detail-content">
+                                    <a href="https://krg.com.hk">krg.com.hk</a>
+                                </div>
+                            </div>
+
+                            <div class="detail-item" href="tel:2520 1110">
+                                <span class="material-icons">phone</span>
+                                <div class="detail-content">
+                                    <a href="tel:2520 1110">2520 1110</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- old social-icons -->
+                    <!-- <div id="RBmZ0o0RgA"
+                        style="gap:0px;top:0px;left:0px;width:100%;height:18px;margin:0px;display:flex;padding:20px;position:relative;margin-top:0px;transform:none;align-items:start;margin-left:0px;padding-top:0px;border-color:black;border-style:none;border-width:1px;margin-right:0px;padding-left:20px;border-radius:0px;margin-bottom:0px;padding-right:20px;flex-direction:column;padding-bottom:0px;justify-content:center;min-height:fit-content;max-height:100%;background-image:linear-gradient(rgba(64, 64, 64, 0), rgba(64, 64, 64, 0)), url();background-size:cover;background-position:center"
+                        class="Container-RBmZ0o0RgA"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                            viewBox="0 0 448 512" id="2EJjC_Vr7i" style="color:#000000;cursor:pointer;opacity:1"
+                            height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                            </path>
+                        </svg></div> -->
+                </div>
+                <div class="container-footer">
+                    <div class="divider">
+                        <!-- <div style="margin-bottom: 1rem;">fufuland</div> -->
+                        <!-- <div style="margin-bottom: 0.5rem;">星期一至日</div>
+                        <div style="margin-bottom: 0.5rem;">12:00 - 15:30</div>
+                        <div style="margin-bottom: 1rem;">17:30 - 02:30</div> -->
+                        <!-- <div style="margin-bottom: 1rem;">尖沙咀分店 銅鑼灣分店</div>
+                     -->
+                        <div class="social-icons">
+                            <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="18" cy="6" r="1" />
+                            </svg>
+                            <svg href="https://www.google.com" class="social-icon" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                            <a href="https://www.google.com">
+                                <svg href="https://www.google.com" class="social-icon" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path
+                                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg>
+
+                            </a>
+                            <!-- Threads -->
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                                image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+                                viewBox="0 0 439.999 511.429">
+                                <path fill-rule="nonzero"
+                                    d="M342.382 237.037a175.843 175.843 0 00-6.707-3.045c-3.947-72.737-43.692-114.379-110.428-114.805-38.505-.256-72.972 15.445-94.454 48.041l36.702 25.178c15.265-23.159 39.221-28.097 56.864-28.097.203 0 .408 0 .61.003 21.973.139 38.555 6.528 49.287 18.987 7.81 9.071 13.034 21.606 15.62 37.425-19.482-3.312-40.552-4.329-63.077-3.039-63.449 3.656-104.24 40.661-101.5 92.081 1.39 26.083 14.384 48.522 36.586 63.18 18.773 12.391 42.95 18.451 68.078 17.08 33.183-1.819 59.214-14.48 77.376-37.631 13.793-17.579 22.516-40.362 26.368-69.068 15.814 9.543 27.535 22.103 34.007 37.2 11.007 25.665 11.648 67.84-22.764 102.222-30.15 30.121-66.392 43.151-121.164 43.554-60.757-.45-106.707-19.934-136.582-57.914-27.976-35.563-42.434-86.93-42.973-152.675.539-65.745 14.997-117.113 42.973-152.675 29.875-37.979 75.824-57.464 136.581-57.914 61.197.455 107.948 20.033 138.967 58.195 15.21 18.713 26.677 42.248 34.236 69.688l43.011-11.476c-9.163-33.775-23.581-62.881-43.203-87.017C357.031 25.59 298.872.519 223.935 0h-.3C148.851.518 91.343 25.683 52.709 74.794 18.331 118.498.598 179.308.002 255.534l-.002.18.002.18c.596 76.226 18.329 137.037 52.707 180.741 38.634 49.11 96.142 74.277 170.926 74.794h.3c66.487-.462 113.352-17.868 151.96-56.442 50.511-50.463 48.991-113.717 32.342-152.548-11.944-27.847-34.716-50.464-65.855-65.402zm-114.795 107.93c-27.809 1.566-56.7-10.917-58.124-37.652-1.056-19.823 14.108-41.942 59.83-44.577 5.237-.302 10.375-.45 15.422-.45 16.609 0 32.146 1.613 46.272 4.702-5.268 65.798-36.173 76.483-63.4 77.977z" />
+                            </svg>
+                            <!-- x -->
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                                image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+                                viewBox="0 0 512 462.799">
+                                <path fill-rule="nonzero"
+                                    d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
+                            </svg>
+                            <!-- Whatsapp -->
+                            <svg class="social-icon" xmlns="http://www.w3.org/2000/svg"
+                                shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
+                                image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+                                viewBox="0 0 510 512.459">
+                                <path fill="#111B21"
+                                    d="M435.689 74.468C387.754 26.471 324 .025 256.071 0 116.098 0 2.18 113.906 2.131 253.916c-.024 44.758 11.677 88.445 33.898 126.946L0 512.459l134.617-35.311c37.087 20.238 78.85 30.891 121.345 30.903h.109c139.949 0 253.88-113.917 253.928-253.928.024-67.855-26.361-131.645-74.31-179.643v-.012zm-179.618 390.7h-.085c-37.868-.011-75.016-10.192-107.428-29.417l-7.707-4.577-79.886 20.953 21.32-77.889-5.017-7.987c-21.125-33.605-32.29-72.447-32.266-112.322.049-116.366 94.729-211.046 211.155-211.046 56.373.025 109.364 22.003 149.214 61.903 39.853 39.888 61.781 92.927 61.757 149.313-.05 116.377-94.728 211.058-211.057 211.058v.011zm115.768-158.067c-6.344-3.178-37.537-18.52-43.358-20.639-5.82-2.119-10.044-3.177-14.27 3.178-4.225 6.357-16.388 20.651-20.09 24.875-3.702 4.238-7.403 4.762-13.747 1.583-6.343-3.178-26.787-9.874-51.029-31.487-18.86-16.827-31.597-37.598-35.297-43.955-3.702-6.355-.39-9.789 2.775-12.943 2.849-2.848 6.344-7.414 9.522-11.116s4.225-6.355 6.343-10.581c2.12-4.238 1.06-7.937-.522-11.117-1.584-3.177-14.271-34.409-19.568-47.108-5.151-12.37-10.385-10.69-14.269-10.897-3.703-.183-7.927-.219-12.164-.219s-11.105 1.582-16.925 7.939c-5.82 6.354-22.209 21.709-22.209 52.927 0 31.22 22.733 61.405 25.911 65.642 3.177 4.237 44.745 68.318 108.389 95.812 15.135 6.538 26.957 10.446 36.175 13.368 15.196 4.834 29.027 4.153 39.96 2.52 12.19-1.825 37.54-15.353 42.824-30.172 5.283-14.818 5.283-27.529 3.701-30.172-1.582-2.641-5.819-4.237-12.163-7.414l.011-.024z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/$-->
+    <script src="js/timer.js"></script>
+    <script src="js/signumWallet.js"></script>
+    <script src="js/signumWallet02.js"></script>
+    <!-- <script>
+        const form = document.getElementById('orderForm');
+        const submitButton = form.querySelector('button[type="submit"]');
+        ; const toggleButton = document.getElementById('toggleForm')
+        const formContainer = document.getElementById('formContainer');
+
+        // Set initial state
+        formContainer.classList.add('hidden');
+        toggleButton.textContent = '點擊換領！';
+
+        // Toggle form visibility
+        toggleButton.addEventListener('click', () => {
+            formContainer.classList.toggle('hidden');
+            toggleButton.textContent = formContainer.classList.contains('hidden') ? '點擊換領！' : '隱藏表單';
+        });
+
+        // Validation rules
+        const validationRules = {
+            name: {
+                pattern: /^[\u4e00-\u9fa5a-zA-Z\s]{2,}$/,
+                message: '請輸入有效的姓名（至少2個字符，不含數字和特殊符號）'
+            },
+            address1: {
+                pattern: /.{5,}/,
+                message: '請輸入有效的地址（至少5個字符）'
+            },
+            city: {
+                pattern: /^[\u4e00-\u9fa5a-zA-Z\s]{2,}$/,
+                message: '請輸入有效的城市名稱'
+            },
+            zipcode: {
+                pattern: /^[0-9a-zA-Z-]{2,}$/,
+                message: '請輸入有效的郵遞區號'
+            },
+            email: {
+                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: '請輸入有效的電子郵件地址'
+            },
+            phone: {
+                pattern: /^[0-9]{8,}$/,
+                message: '請輸入有效的電話號碼',
+                optional: true
+            }
+        };
+
+        // Validate single field
+        function validateField(field) {
+            const rule = validationRules[field.id];
+            if (!rule) return true;
+
+            const errorElement = field.parentElement.querySelector('.error-message');
+            let isValid = true;
+
+            // Clear previous validation state
+            field.classList.remove('valid', 'invalid');
+            errorElement.textContent = '';
+
+            // Skip validation if field is optional and empty
+            if (rule.optional && !field.value) {
+                return true;
+            }
+
+            // Required field validation
+            if (field.required && !field.value) {
+                isValid = false;
+                errorElement.textContent = '此欄位為必填';
+            }
+            // Pattern validation
+            else if (field.value && !rule.pattern.test(field.value)) {
+                isValid = false;
+                errorElement.textContent = rule.message;
+            }
+
+            // Add validation state class
+            field.classList.add(isValid ? 'valid' : 'invalid');
+            return isValid;
+        }
+
+        // Validate all fields and update submit button state
+        function validateForm() {
+            const fields = form.querySelectorAll('input, select');
+            let isFormValid = true;
+
+            fields.forEach(field => {
+                if (field.id && (field.required || field.value)) {
+                    isFormValid = validateField(field) && isFormValid;
+                }
+            });
+
+            submitButton.disabled = !isFormValid;
+            return isFormValid;
+        }
+
+        // Add validation listeners to all fields
+        form.querySelectorAll('input, select').forEach(field => {
+            field.addEventListener('input', () => {
+                if (field.id) {
+                    validateField(field);
+                    validateForm();
+                }
+            });
+
+            field.addEventListener('blur', () => {
+                if (field.id) {
+                    validateField(field);
+                    validateForm();
+                }
+            });
+        });
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (validateForm()) {
+                // Collect form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                // Add phone number with prefix
+                data.phone = document.getElementById('phonePrefix').value +
+                    document.getElementById('phone').value;
+
+                console.log('Form data:', data);
+                // Here you would typically send the data to your server
+                alert('表單提交成功！');
+            }
+        });
+
+        // Initial form validation
+        validateForm();
+    </script> -->
+    <script>
+        const form = document.getElementById('orderForm');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const toggleButton = document.getElementById('toggleForm');
+        const formContainer = document.getElementById('formContainer');
+
+        // Set initial state
+        formContainer.classList.add('hidden');
+        toggleButton.textContent = '顯示表單';
+
+        // Toggle form visibility
+        toggleButton.addEventListener('click', () => {
+            formContainer.classList.toggle('hidden');
+            toggleButton.textContent = formContainer.classList.contains('hidden') ? '顯示表單' : '隱藏表單';
+        });
+
+        // Validation rules
+        const validationRules = {
+            name: {
+                pattern: /^[\u4e00-\u9fa5a-zA-Z\s]{2,}$/,
+                message: '請輸入有效的姓名（至少2個字符，不含數字和特殊符號）'
+            },
+            address1: {
+                pattern: /.{5,}/,
+                message: '請輸入有效的地址（至少5個字符）'
+            },
+            city: {
+                pattern: /^[\u4e00-\u9fa5a-zA-Z\s]{2,}$/,
+                message: '請輸入有效的城市名稱'
+            },
+            zipcode: {
+                pattern: /^[0-9a-zA-Z-]{4,}$/,
+                message: '請輸入有效的郵遞區號'
+            },
+            email: {
+                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: '請輸入有效的電子郵件地址'
+            },
+            phone: {
+                pattern: /^[0-9]{8,}$/,
+                message: '請輸入有效的電話號碼',
+                optional: true
+            }
+        };
+
+        // Validate single field
+        function validateField(field) {
+            const rule = validationRules[field.id];
+            if (!rule) return true;
+            console.log('field', field.getAttribute('id'));
+            console.log('field.parentElement', field.parentElement);
+            if (field.getAttribute('id') !== "phone" && field.getAttribute('id') !== "phonePrefix") {
+                const errorElement = field.parentElement.querySelector('.error-message');
+
+                console.log('errorElement', errorElement);
+                let isValid = true;
+
+                // Clear previous validation state
+                field.classList.remove('valid', 'invalid');
+                errorElement.textContent = '';
+
+                // Skip validation if field is optional and empty
+                if (rule.optional && !field.value) {
+                    return true;
+                }
+
+                // Required field validation
+                if (field.required && !field.value) {
+                    isValid = false;
+                    errorElement.textContent = '此欄位為必填';
+                }
+                // Pattern validation
+                else if (field.value && !rule.pattern.test(field.value)) {
+                    isValid = false;
+                    errorElement.textContent = rule.message;
+                }
+
+                // Add validation state class
+                field.classList.add(isValid ? 'valid' : 'invalid');
+                return isValid;
+            }
+            else {
+                const errorElement = field.parentElement.parentElement.querySelector('.error-message');
+
+                console.log('errorElement', errorElement);
+                let isValid = true;
+
+                // Clear previous validation state
+                field.classList.remove('valid', 'invalid');
+                errorElement.textContent = '';
+
+                // Skip validation if field is optional and empty
+                if (rule.optional && !field.value) {
+                    return true;
+                }
+
+                // Required field validation
+                if (field.required && !field.value) {
+                    isValid = false;
+                    errorElement.textContent = '此欄位為必填';
+                }
+                // Pattern validation
+                else if (field.value && !rule.pattern.test(field.value)) {
+                    isValid = false;
+                    errorElement.textContent = rule.message;
+                }
+
+                // Add validation state class
+                field.classList.add(isValid ? 'valid' : 'invalid');
+                return isValid;
+            }
+        }
+
+        // Validate all fields and update submit button state
+        function validateForm() {
+            const fields = form.querySelectorAll('input, select');
+            let isFormValid = true;
+
+            fields.forEach(field => {
+                if (field.id && (field.required || field.value)) {
+                    isFormValid = validateField(field) && isFormValid;
+                }
+            });
+
+            submitButton.disabled = !isFormValid;
+            return isFormValid;
+        }
+
+        // Add validation listeners to all fields
+        form.querySelectorAll('input, select').forEach(field => {
+            field.addEventListener('input', () => {
+                if (field.id) {
+                    validateField(field);
+                    validateForm();
+                }
+            });
+
+            field.addEventListener('blur', () => {
+                if (field.id) {
+                    validateField(field);
+                    validateForm();
+                }
+            });
+        });
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (validateForm()) {
+                // Collect form data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                // Add phone number with prefix
+                data.phone = document.getElementById('phonePrefix').value +
+                    document.getElementById('phone').value;
+
+                console.log('Form data:', data);
+                // Here you would typically send the data to your server
+                alert('表單提交成功！');
+            }
+        });
+
+        // Initial form validation
+        validateForm();
+    </script>
+    <script>
+        //for hours dropdown 
+        const hoursItem = document.querySelector(".open-hours-info")
+        const hoursDropdown = hoursItem.querySelector(".dropdown")
+
+        hoursItem.addEventListener("click", function () {
+            hoursDropdown.textContent = hoursDropdown.textContent === "expand_more" ? "expand_less" : "expand_more"
+            // Here you would show/hide the full hours list
+            if (hoursDropdown.textContent === "expand_less") {
+                const fullHoursList = document.querySelector(".full-hours-list")
+                fullHoursList.classList.toggle("hidden")
+                // alert("Opening full hours list  ")
+            }
+            if (hoursDropdown.textContent === "expand_more") {
+                const fullHoursList = document.querySelector(".full-hours-list")
+                fullHoursList.classList.toggle("hidden")
+                // alert("Opening full hours list  ")
+            }
+        })
+    </script>
+    <script>
+        const openHours = {
+            Monday: {
+                open: { hour: 9, minute: 0 },
+                close: { hour: 18, minute: 0 },
+            },
+            Tuesday: {
+                open: { hour: 14, minute: 9 },
+                close: { hour: 18, minute: 0 },
+            },
+            Wednesday: {
+                open: { hour: 9, minute: 0 },
+                close: { hour: 18, minute: 0 },
+            },
+            Thursday: {
+                open: { hour: 9, minute: 0 },
+                close: { hour: 18, minute: 0 },
+            },
+            Friday: {
+                open: { hour: 9, minute: 0 },
+                close: { hour: 18, minute: 0 },
+            },
+            Saturday: {
+                open: { hour: 9, minute: 0 },
+                close: { hour: 18, minute: 0 },
+            },
+            Sunday: {
+                open: { hour: 9, minute: 0 },
+                close: { hour: 18, minute: 0 },
+            }
+        }
+        function compareOpenHour(date, day, openHours = openHours) {
+            const currentHour = date.getHours();
+            const currentMinute = date.getMinutes();
+
+            if (currentHour > openHours[day].close.hour ||
+                (currentHour === openHours[day].close.hour && currentMinute >= openHours[day].close.minute)) {
+                return 'close';
+            }
+            if (currentHour < openHours[day].open.hour ||
+                (currentHour === openHours[day].open.hour && currentMinute < openHours[day].open.minute)) {
+                return 'before open';
+            }
+            return 'open';
+        }
+        function checkDateTime() {
+            const now = new Date();
+
+            // Get local time information
+            const localDay = now.toLocaleDateString('en-US', { weekday: 'long' });
+            const localTime = now.toLocaleTimeString('en-US');
+
+            // Options for Hong Kong time
+            const hkOptions = {
+                timeZone: 'Asia/Hong_Kong',
+                hour12: false,
+                weekday: 'long',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+
+            // Get Hong Kong date and time
+            const hkDay = now.toLocaleDateString('en-US', {
+                timeZone: 'Asia/Hong_Kong',
+                weekday: 'long'
+            });
+
+            const hkTime = now.toLocaleTimeString('en-US', hkOptions);
+
+            const openStatus = compareOpenHour(now, hkDay, openHours);
+             
+            return {
+                day : hkDay,
+                openStatus: openStatus};
+        }
+
+
+        // Run the function
+        const openStatus = checkDateTime();
+        console.log(openStatus);
+        if (openStatus.openStatus === 'open') {
+            document.querySelector('.open-status').textContent = '營業中';
+            document.querySelector('.open-status').classList.add('open');
+            const extraZero =`${openHours[openStatus.day].close.minute}`.length > 1 ? "" : "0";
+            document.querySelector('.open-status-quote').innerHTML = `&nbsp;結束營業時間：${openHours[openStatus.day].close.hour}:${extraZero}${openHours[openStatus.day].close.minute }`;
+        } else if (openStatus.openStatus === 'close') {
+            document.querySelector('.open-status').textContent = '已結束營業';
+            document.querySelector('.open-status').classList.add('close');
+              const extraZero =`${openHours[openStatus.day].close.minute}`.length > 1 ? "" : "0";
+            document.querySelector('.open-status-quote').innerHTML = `&nbsp;結束營業時間：${openHours[openStatus.day].close.hour}:${extraZero}${openHours[openStatus.day].close.minute}`;
+        } else {
+            document.querySelector('.open-status').textContent = '未開始營業';
+            document.querySelector('.open-status').classList.add('close');
+              const extraZero =`${openHours[openStatus.day].open.minute}`.length > 1 ? "" : "0";
+            document.querySelector('.open-status-quote').innerHTML = `&nbsp;開業時間：${openHours[openStatus.day].open.hour}:${extraZero}${openHours[openStatus.day].open.minute}`;
+        }
+    </script>
+</body>
+
+</html>

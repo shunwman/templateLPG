@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂單表格</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .toggle-btn {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #7895b7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover {
+            background-color: #6785a7;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            transition: opacity 0.3s, max-height 0.3s;
+            overflow: hidden;
+        }
+
+        .form-container.hidden {
+            opacity: 0;
+            max-height: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 24px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px 12px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        /* Validation states */
+        input.valid, select.valid {
+            border-bottom-color: #4caf50;
+        }
+
+        input.invalid, select.invalid {
+            border-bottom-color: #f44336;
+        }
+
+        .error-message {
+            color: #f44336;
+            font-size: 12px;
+            margin-top: 4px;
+            min-height: 16px;
+            display: block;
+        }
+
+        .phone-input {
+            display: flex;
+            gap: 12px;
+        }
+
+        .phone-prefix {
+            width: 120px;
+        }
+
+        .order-summary {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            color: #666;
+        }
+
+        .total-row {
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #7895b7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: background-color 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background-color: #6785a7;
+        }
+
+        .checkout-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .required::after {
+            content: '*';
+            color: #ff4d4f;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleForm" class="toggle-btn">顯示表單</button>
+    <div id="formContainer" class="form-container hidden">
+        <h1>送貨地址</h1>
+        <form id="orderForm" novalidate>
+            <div class="form-group">
+                <label class="required">姓名</label>
+                <input type="text" id="name" required>
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="required">地址(第一行)</label>
+                <input type="text" id="address1" required>
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label>地址(第二行)</label>
+                <input type="text" id="address2">
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="required">城市</label>
+                <input type="text" id="city" required>
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label>省分/州</label>
+                <input type="text" id="state">
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="required">郵遞區號</label>
+                <input type="text" id="zipcode" required>
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="required">國家/地區</label>
+                <select id="country" required>
+                    <option value="">請選擇國家/地區</option>
+                    <option value="HK">香港</option>
+                    <option value="TW">台灣</option>
+                    <option value="CN">中國</option>
+                </select>
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label>聯絡方式</label>
+                <div class="phone-input">
+                    <select id="phonePrefix" class="phone-prefix">
+                        <option value="+852">香港(+852)</option>
+                        <option value="+886">台灣(+886)</option>
+                        <option value="+86">中國(+86)</option>
+                    </select>
+                    <input type="tel" id="phone" placeholder="電話號碼">
+                </div>
+                <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="required">電郵地址</label>
+                <input type="email" id="email" required>
+                <span class="error-message"></span>
+            </div>
+
+            <div class="order-summary">
+                <h1>訂單詳情</h1>
+                <div class="summary-row">
+                    <span>小記</span>
+                    <span>0</span>
+                </div>
+                <div class="summary-row">
+                    <span>運費</span>
+                    <span>免費</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>總額</span>
+                    <span>0</span>
+                </div>
+            </div>
+
+            <button type="submit" class="checkout-btn" disabled>立即結帳</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
+
